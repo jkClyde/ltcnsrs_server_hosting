@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-2$51go25%0zvue#0gvz0*p!i%#++af)xm%e33-nlfpnp^!^q1-
 DEBUG = False
 
 # ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.137.1', '192.168.100.114']
-ALLOWED_HOSTS = ['ltcnsrs.onrender.com']
+ALLOWED_HOSTS = ['ltcnsrs.onrender.com', 'http://localhost:5173', 'ltcnsrs-server.onrender.com']
 
 # Application definition
 
@@ -169,9 +169,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Add your frontend URL here
-    # "https://ltcnsrs-server.onrender.com",
-    # "https://ltcnsrs.onrender.com",
-     "*",
+    "https://ltcnsrs-server.onrender.com",
+    "https://ltcnsrs.onrender.com",
+    
 
 ]
 
