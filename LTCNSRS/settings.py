@@ -185,21 +185,17 @@ EMAIL_HOST_PASSWORD = 'sfqk qtci ekly pybx'
 EMAIL_USE_TLS = True
 
 DJOSER = {
-    # 'EMAIL': {
-    #     'activation': 'email.ActivationEmail',  # Path to your custom email template
-    # },
     'LOGIN_FIELD': 'email',
     'USER_CREATE_PASSWORD_RETYPE': True,
     'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
-    'SEND_CONFIRMATION_EMAIL': True,
+    'SEND_CONFIRMATION_EMAIL': False,  # Disable email confirmation on user creation
     'SET_USERNAME_RETYPE': True,
     'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'auth/users/activation/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
-    # 'ACTIVATION_EMAIL_TEMPLATE': 'activation.txt',  # Specify the path to your custom activation email template
+    'SEND_ACTIVATION_EMAIL': False,  # Disable email activation
     'SERIALIZERS': {
         'user_create': 'app_accounts.serializers.UserCreateSerializer',
         'user': 'app_accounts.serializers.UserCreateSerializer',
@@ -207,6 +203,7 @@ DJOSER = {
         'user_delete': 'djoser.serializers.UserDeleteSerializer',
     }
 }
+
 
 AUTHENTICATION_BACKENDS = [
     'app_accounts.CustomBackend.CustomBackend',  # Replace 'path.to' with the actual import path to your CustomBackend class
